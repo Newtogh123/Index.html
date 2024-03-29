@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My School Website</title>
+    <link rel="stylesheet" href="styles.css">
+<style type="text/css" id="dcoder_stylesheet">body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 50px 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}</style></head>
+<body>
+    <header>
+        <h1>Sanskar Vidhya Mandir School</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#academics">Academics</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#login">Login</a></li> <!-- Added login link -->
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Welcome to our school website. Learn more about us here.</p>
+    </section>
+    
+    <section id="academics">
+        <h2>Academics</h2>
+        <p>Explore our academic programs and courses.</p>
+    </section>
+    
+    <section id="events">
+        <h2>Events</h2>
+        <p>Stay updated with upcoming events and activities.</p>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us for any inquiries or feedback.</p>
+    </section>
+
+    <section id="login">
+        <h2>Login</h2>
+        <form action="login.php" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" value="Login">
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2024 My School. All rights reserved.</p>
+    </footer>
+
+<script type="text/javascript" id="dcoder_script"><?php
+// Dummy credentials for demonstration purposes
+$valid_username = "user123";
+$valid_password = "password123";
+
+// Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get username and password from the form
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    // Check if username and password match
+    if ($username === $valid_username && $password === $valid_password) {
+        // Redirect user to dashboard or another page on successful login
+        header("Location: dashboard.php");
+        exit;
+    } else {
+        // Redirect user back to login page with error message
+        header("Location: index.php?error=1");
+        exit;
+    }
+}
+?></script></body></html>
